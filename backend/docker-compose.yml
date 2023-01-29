@@ -1,0 +1,40 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: lamp_bf2023
+      MYSQL_USER: nmoore_bf2023
+      MYSQL_PASSWORD: password_2023
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - "./db:/docker-entrypoint-initdb.d"
+    networks:
+      - bf2023-docker
+  www:
+    build:
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    image: php:7.4.1-apache
+    volumes:
+      - "./www/:/var/www/html"
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - bf2023-docker
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+    networks:
+      - bf2023-docker
+networks:
+  edu-docker:
+    driver: bridge
