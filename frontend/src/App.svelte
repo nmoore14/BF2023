@@ -20,7 +20,7 @@
     }
 </script>
 
-<main class="absolute flex flex-col nowrap w-screen h-screen bg-gray-200">
+<main class="absolute flex flex-col nowrap w-screen h-screen bg-uc-blue">
     <Modal show={$modal}
         styleBg={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
         styleWindow={{ boxShadow: '0 2px 5px 0 rgba(0, 0, 0, 0.15)' }}
