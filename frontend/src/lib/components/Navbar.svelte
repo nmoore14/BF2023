@@ -1,11 +1,8 @@
 <script>
     import { onMount } from 'svelte';
-
     import Icon from '@iconify/svelte';
     // your script goes here
-
     let cameraBtn;
-
     function showCamera() {
         cameraBtn.click();
         console.log('clicking the camera');
