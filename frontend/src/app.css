@@ -127,6 +127,11 @@ html {
     padding-right: 1rem;
 }
 
+.px-4 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
 .py-0 {
     padding-top: .5rem;
     padding-bottom: .5rem;

@@ -3,7 +3,7 @@
 
 <div class="relative flex flex-col w-full hero">
     <div>
-        <div class="relative flex flex-col w-full h-full justify-end items-center hero-inside">
+        <div class="relative flex flex-col w-full h-full justify-center items-center hero-inside">
             <div class="relative flex flex-row justify-center items-center hero-title">
                 <h1 class="gray-200">Hero Title</h1>
             </div>
@@ -13,15 +13,15 @@
 
 <style>
     .hero {
+        background-image: url('../assets/images/microphone.jpg');
         height: auto;
-        background-image: url('/public/microphone.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         margin-bottom: 3rem;
     }
     .hero-inside {
-        height: 20rem;
+        height: 40rem;
     }
     .hero-title {
         width: 30rem;
