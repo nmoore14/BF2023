@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Flex */
 .flex {
     display: flex;
 
@@ -36,10 +37,36 @@
     }
 }
 
+/* Position */
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+/* Widths */
 .w-full {
     width: 100%;
 }
 
+/* Heights */
 .h-full {
     height: 100%;
+}
+
+/* Margins */
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Paddings */
+.p-1 {
+  padding: 1rem;
 }
