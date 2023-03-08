@@ -31,11 +31,25 @@
         </li>
       </ul>
     </nav>
+    <div
+      :class="showMenu ? 'nav-bg-active' : ''"
+      class="absolute mobile-nav-bg"
+      @click="showMenu = false"
+    >
+    </div>
     <nav
       :class="showMenu ? 'mobile-nav-active' : ''"
       class="absolute flex col justify-start items-end mobile-nav"
     >
       <ul class="flex col justify-start items-end md-hidden mobile-nav-items">
+        <li>
+          <NuxtLink class="link-item-mobile-brand" to="/">
+            <img
+              src="/images/Business Forum Logo_No_Date_Blck625.png"
+              alt="Business forum logo"
+            />
+          </NuxtLink>
+        </li>
         <li>
           <NuxtLink class="link-item-mobile" to="/forum" @click="hideMenu"
             >The Forum</NuxtLink
@@ -72,7 +86,6 @@ export default {
     let showMenu = ref(false);
 
     const toggleNav = () => {
-      console.log(showMenu.value);
       showMenu.value = !showMenu.value;
     };
 
