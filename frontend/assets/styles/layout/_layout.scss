@@ -24,6 +24,10 @@
     flex-wrap: nowrap;
   }
 
+  &.justify-start {
+    justify-content: flex-start;
+  }
+
   &.justify-center {
     justify-content: center;
   }
@@ -42,6 +46,10 @@
 
   &.items-start {
     align-items: flex-start;
+  }
+
+  &.items-end {
+    align-items: flex-end;
   }
 }
 
