@@ -4,6 +4,7 @@
     <main class="w-full flex col justify-center items-center my-1 px-2">
       <ForumCard />
       <div class="flex row wrap justify-center items-center w-full my-1 p-1 event-cards">
+        <h1 class="w-full title event-section-title">Events</h1>
         <EventCard
           v-for="event in Events"
           :startTime=event.startTime
@@ -53,6 +54,10 @@
 </script>
 
 <style lang="scss" scoped>
+.event-section-title {
+  text-align: left;
+}
+
 .event-cards {
   gap: .5rem;
 }
