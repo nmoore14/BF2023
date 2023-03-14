@@ -51,17 +51,17 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="link-item-mobile" to="/forum" @click="hideMenu"
+          <NuxtLink class="link-item-mobile" to="/forum" active-class="mobile-nav-selected" @click="hideMenu"
             >The Forum</NuxtLink
           >
         </li>
         <li>
-          <NuxtLink class="link-item-mobile" to="/speakers" @click="hideMenu"
+          <NuxtLink class="link-item-mobile" to="/speakers" active-class="mobile-nav-selected" @click="hideMenu"
             >Speakers</NuxtLink
           >
         </li>
         <li>
-          <NuxtLink class="link-item-mobile" to="/faq" @click="hideMenu"
+          <NuxtLink class="link-item-mobile" to="/faq" active-class="mobile-nav-selected" @click="hideMenu"
             >FAQ</NuxtLink
           >
         </li>
@@ -140,6 +140,13 @@ li {
 }
 
 .nav-active {
+  background-color: $uc-maroon;
+  color: $gray-200;
+  padding: .25rem .5rem;
+  border-radius: .25rem;
+}
+
+.mobile-nav-selected {
   background-color: $uc-maroon;
   color: $gray-200;
   padding: .25rem .5rem;
