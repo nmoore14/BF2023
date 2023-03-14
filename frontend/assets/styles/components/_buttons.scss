@@ -22,6 +22,15 @@
   letter-spacing: .13rem;
   font-weight: 600;
   text-decoration: underline;
+  text-decoration: none;
+}
+
+.btn-primary-ghost-2 {
+  background-color: transparent;
+  color: $gray-200;
+  font-size: 1.13rem;
+  letter-spacing: .13rem;
+  font-weight: 600;
   border: solid $gray-200 2px;
   text-decoration: none;
 }

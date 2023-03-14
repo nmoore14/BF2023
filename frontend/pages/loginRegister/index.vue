@@ -20,7 +20,7 @@
             Click below to join the 2023 Business Spring Forum
           </p>
           <NuxtLink
-            class="btn btn-primary-ghost register-button"
+            class="btn btn-primary-ghost-2 register-button"
             to="https://forms.office.com/Pages/ResponsePage.aspx?id=CPzRDz30G0y9DxepEopgpG3nmk7_2ydOpOrJoTtHpbZURTNaQUQ5VUpaN0oySFpUT1RFN0dLTUJLTi4u"
             target="_blank"
           >
