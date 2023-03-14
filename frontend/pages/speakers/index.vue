@@ -1,11 +1,58 @@
 <template>
-  <div class="absolute flex col justify-center items-center w-full page">
-    <main class="w-full flex col justify-center items-center my-1 px-2">
-      <h1 class="title">Speakers</h1>
+  <div class="flex col justify-center items-center w-full h-full page">
+    <main class="flex col justify-center items-center w-full h-full my-1 px-2">
+      <div class="flex row wrap justify-center items-center w-full speakers">
+        <SpeakerCard
+          v-for="speaker in Speakers"
+          :name="speaker.name"
+          :title="speaker.title"
+          :company="speaker.company"
+          :picture="speaker.picture"
+        />
+      </div>
     </main>
   </div>
 </template>
 
-<style lang="scss">
+<script setup lang="ts">
+const Speakers = [
+  {
+    name: "Mr. Joe Craft",
+    title: "Chairman, President and CEO",
+    company: "Alliance Resource Partners, LP",
+    picture: "/images/speakers/Craft, Joe Pic.jpg",
+  },
+  {
+    name: "Mr. Jeffrey W. Davis",
+    title: "Business Development and Commercial Training Director",
+    company: "Interplastic Corporation/North American Composites",
+    picture: "/images/speakers/Davis, Jeff Pic.jpg",
+  },
+  {
+    name: "Mr. David Hubbard",
+    title: "Chief of Legislative, State and Local Affairs",
+    company: "National Security Agency",
+    picture: "/images/speakers/Hubbard, David Pic.jpeg",
+  },
+  {
+    name: "Ms. Barbara Johnston",
+    title: "Creative Director",
+    company: "IDEA Johnston",
+    picture: "/images/speakers/Johnston, Barbara Pic.jpg",
+  },
+  {
+    name: "Mr. Charles Reed",
+    title: "President",
+    company: "Reed Enterprises, Inc.",
+    picture: "/images/speakers/Reed, Charles.jpg",
+  },
+];
+</script>
 
+<style lang="scss" scoped>
+.speakers {
+  margin-top: 3rem;
+  column-gap: 1.5rem;
+  row-gap: 2.5rem;
+}
 </style>
