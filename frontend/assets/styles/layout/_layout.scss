@@ -75,11 +75,19 @@
 }
 
 /* Widths */
+.w-screen {
+  width: 100vw;
+}
+
 .w-full {
   width: 100%;
 }
 
 /* Heights */
+.h-screen {
+  height: 100vh;
+}
+
 .h-full {
   height: 100%;
 }

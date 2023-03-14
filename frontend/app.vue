@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full">
+  <div class="flex col wrap justify-center items-center w-full h-full site">
     <Navbar />
     <NuxtPage />
     <Footer />
@@ -9,3 +9,10 @@
 <script lang="ts">
 import "primeicons/primeicons.css";
 </script>
+
+<style lang="scss">
+.site {
+  margin: 0;
+  padding: 0;
+}
+</style>

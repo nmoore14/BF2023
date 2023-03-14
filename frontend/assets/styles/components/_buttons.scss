@@ -18,7 +18,12 @@
 .btn-primary-ghost {
   background-color: transparent;
   color: $gray-200;
+  font-size: 1.13rem;
+  letter-spacing: .13rem;
+  font-weight: 600;
   text-decoration: underline;
+  border: solid $gray-200 2px;
+  text-decoration: none;
 }
 
 .btn-secondary {
