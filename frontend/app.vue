@@ -1,10 +1,11 @@
 <template>
-    <div>
-        <Navbar />
-        <NuxtPage />
-    </div>
+  <div class="w-full h-full">
+    <Navbar />
+    <NuxtPage />
+    <Footer />
+  </div>
 </template>
 
 <script lang="ts">
-  import 'primeicons/primeicons.css'
+import "primeicons/primeicons.css";
 </script>

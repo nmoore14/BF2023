@@ -30,8 +30,13 @@ const props = defineProps({
 
 .card-header {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-bottom: solid $uc-red 4px;
-  border-radius: .15rem;
+  border-radius: 0.15rem;
+  min-height: 5rem;
 }
 
 .card-title {

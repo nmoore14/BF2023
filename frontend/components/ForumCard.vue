@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex col justify-center items-start p-1 forum-card">
+  <div class="relative w-full flex col justify-center items-start p-1 forum-card">
     <div class="w-full card-header">
       <h1 class="title">The Forum</h1>
     </div>

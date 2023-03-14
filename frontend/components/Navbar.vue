@@ -104,6 +104,8 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  top: 0;
+  left: 0;
   background-color: $off-white;
   z-index: 999;
 }

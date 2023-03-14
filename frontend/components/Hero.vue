@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex col justify-end items-center w-full hero">
+  <div class="flex col justify-end items-center w-full hero">
     <div class="gradient-bg"></div>
     <h2 class="hero-sub-title">
       14th Annual Business Forum for Young Professionals
@@ -35,6 +35,8 @@ export default {
 
 .hero {
   height: 25rem;
+  margin-top: 0;
+  margin-left: 0;
   background-color: $uc-red;
   overflow: hidden;
   background-image: url("/images/conference-1.jpg");

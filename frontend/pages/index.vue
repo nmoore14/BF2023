@@ -1,7 +1,7 @@
 <template>
-  <div class="absolute flex col justify-center items-center w-full page">
+  <div class="flex col justify-center items-center w-full h-full page">
     <Hero />
-    <main class="w-full flex col justify-center items-center my-1 px-2">
+    <main class="w-full flex col justify-center items-center my-1 content">
       <ForumCard />
       <div class="flex row wrap justify-center items-center w-full my-1 p-1 event-cards">
         <h1 class="w-full title event-section-title">Events</h1>
@@ -13,6 +13,7 @@
           :location=event.location
         />
       </div>
+      <Sponsors />
     </main>
   </div>
 </template>
@@ -54,8 +55,13 @@
 </script>
 
 <style lang="scss" scoped>
+.content {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
 .event-section-title {
-  text-align: left;
+  text-align: center;
 }
 
 .event-cards {
