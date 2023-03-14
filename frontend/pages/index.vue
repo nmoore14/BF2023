@@ -55,11 +55,6 @@
 </script>
 
 <style lang="scss" scoped>
-.content {
-  padding-left: 8rem;
-  padding-right: 8rem;
-}
-
 .event-section-title {
   text-align: center;
 }
