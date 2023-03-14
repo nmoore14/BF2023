@@ -7,6 +7,7 @@
       <h1 class="title speaker-name-info">{{ name }}</h1>
       <h2 class="speaker-title-info">{{ title }}</h2>
       <h2 class="speaker-company-info">{{ company }}</h2>
+      <NuxtLink :to=link class="btn btn-primary speaker-read-more">Read More</NuxtLink>
     </div>
   </div>
 </template>
@@ -17,6 +18,7 @@ const props = defineProps({
   title: String,
   company: String,
   picture: String,
+  link: String,
 });
 </script>
 
@@ -62,6 +64,11 @@ const props = defineProps({
   font-weight: 300;
   font-size: 1rem;
   text-align: center;
+}
+
+.speaker-read-more {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
 
 @media only screen and (max-width: 714px) {

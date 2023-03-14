@@ -1,5 +1,5 @@
 <template>
-  <div class="flex col justify-center items-center w-full h-full page">
+  <div class="flex col justify-center items-center w-full h-screen page">
     <main class="flex col justify-center items-center w-full h-full my-1 px-2">
       <div class="flex row wrap justify-center items-center w-full speakers">
         <SpeakerCard
@@ -8,6 +8,7 @@
           :title="speaker.title"
           :company="speaker.company"
           :picture="speaker.picture"
+          :link="speaker.link"
         />
       </div>
     </main>
@@ -21,12 +22,7 @@ const Speakers = [
     title: "Chairman, President and CEO",
     company: "Alliance Resource Partners, LP",
     picture: "/images/speakers/Craft, Joe Pic.jpg",
-  },
-  {
-    name: "Mr. Jeffrey W. Davis",
-    title: "Business Development and Commercial Training Director",
-    company: "Interplastic Corporation/North American Composites",
-    picture: "/images/speakers/Davis, Jeff Pic.jpg",
+    link: "/speakers/JoeCraft"
   },
   {
     name: "Mr. David Hubbard",
@@ -46,13 +42,19 @@ const Speakers = [
     company: "Reed Enterprises, Inc.",
     picture: "/images/speakers/Reed, Charles.jpg",
   },
+  {
+    name: "Mr. Jeffrey W. Davis",
+    title: "Business Development and Commercial Training Director",
+    company: "Interplastic Corporation/North American Composites",
+    picture: "/images/speakers/Davis, Jeff Pic.jpg",
+  },
 ];
 </script>
 
 <style lang="scss" scoped>
 .speakers {
-  margin-top: 3rem;
+  margin-top: -5rem;
   column-gap: 1.5rem;
-  row-gap: 2.5rem;
+  row-gap: 4rem;
 }
 </style>
