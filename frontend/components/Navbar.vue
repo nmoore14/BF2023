@@ -16,13 +16,13 @@
     <nav class="flex row justify-center items-center">
       <ul class="flex row w-full justify-center items-center sm-hidden">
         <li>
-          <NuxtLink class="link-item" to="/forum">The Forum</NuxtLink>
+          <NuxtLink class="link-item" to="/forum" active-class="nav-active">The Forum</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="link-item" to="/speakers">Speakers</NuxtLink>
+          <NuxtLink class="link-item" to="/speakers" active-class="nav-active">Speakers</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="link-item" to="/faq">FAQ</NuxtLink>
+          <NuxtLink class="link-item" to="/faq" active-class="nav-active">FAQ</NuxtLink>
         </li>
         <li>
           <NuxtLink class="link-item-cta" to="/loginRegister"
@@ -137,5 +137,12 @@ li {
   color: $gray-200;
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
+}
+
+.nav-active {
+  background-color: $uc-maroon;
+  color: $gray-200;
+  padding: .25rem .5rem;
+  border-radius: .25rem;
 }
 </style>
