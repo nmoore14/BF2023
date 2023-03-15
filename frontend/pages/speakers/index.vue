@@ -1,5 +1,5 @@
 <template>
-  <div class="flex col justify-center items-center w-full h-screen page">
+  <div class="flex col justify-center items-center w-full h-full page">
     <main class="flex col justify-center items-center w-full h-full my-1 px-2">
       <div class="flex row wrap justify-center items-center w-full keynote-speakers">
         <SpeakerCard
@@ -74,6 +74,17 @@ const Speakers = [
 @media only screen and (max-width: 1400px) {
   .speakers {
     padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 714px) {
+  .page {
+    margin-top: 8rem;
+  }
+
+  .speakers {
+    row-gap: 4rem;
+    padding: 0;
   }
 }
 </style>
