@@ -1,6 +1,16 @@
 <template>
   <div class="flex col justify-center items-center w-full h-screen page">
     <main class="flex col justify-center items-center w-full h-full my-1 px-2">
+      <div class="flex row wrap justify-center items-center w-full keynote-speakers">
+        <SpeakerCard
+          v-for="keynoteSpeaker in KeynoteSpeakers"
+          :name="keynoteSpeaker.name"
+          :title="keynoteSpeaker.title"
+          :company="keynoteSpeaker.company"
+          :picture="keynoteSpeaker.picture"
+          :link="keynoteSpeaker.link"
+        />
+      </div>
       <div class="flex row wrap justify-center items-center w-full speakers">
         <SpeakerCard
           v-for="speaker in Speakers"
@@ -16,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-const Speakers = [
+const KeynoteSpeakers = [
   {
     name: "Mr. Joe Craft",
     title: "Chairman, President and CEO",
@@ -24,6 +34,8 @@ const Speakers = [
     picture: "/images/speakers/Craft, Joe Pic.jpg",
     link: "/speakers/JoeCraft"
   },
+]
+const Speakers = [
   {
     name: "Mr. David Hubbard",
     title: "Chief of Legislative, State and Local Affairs",
@@ -53,8 +65,15 @@ const Speakers = [
 
 <style lang="scss" scoped>
 .speakers {
-  margin-top: -5rem;
+  margin-top: 4rem;
   column-gap: 1.5rem;
   row-gap: 4rem;
+  padding: 0 16rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  .speakers {
+    padding: 0 2rem;
+  }
 }
 </style>

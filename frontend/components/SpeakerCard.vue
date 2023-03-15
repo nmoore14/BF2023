@@ -25,7 +25,7 @@ const props = defineProps({
 <style lang="scss">
 .speaker-card {
   background-color: $off-white;
-  padding: 0.75rem 1rem;
+  padding: 1rem 4rem;
   width: 25rem;
   min-height: 14rem;
   border-radius: .5rem;
