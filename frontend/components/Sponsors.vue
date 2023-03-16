@@ -9,7 +9,7 @@
       <div class="sponsor">
         <img
           class="sponsor-img-bf"
-          src="/images/sponsors/Bizzack Foundation Logo.png"
+          src="/images/sponsors/BizzackFoundationLogo.png"
           alt="Bizzack Foundation Logo"
         />
       </div>
@@ -17,7 +17,7 @@
         <a href="https://derbydistribution.net/" target="_blank">
           <img
             class="sponsor-img-ddl"
-            src="/images/sponsors/Derby Distribution Logo - KS.png"
+            src="/images/sponsors/DerbyDistributionLogo-KS.png"
             alt="Derby Distribution Logo"
           />
         </a>
@@ -26,7 +26,7 @@
         <a href="https://www.forchtbank.com" target="_blank">
           <img
             class="sponsor-img-fb"
-            src="/images/sponsors/Forcht Transparent - KS.png"
+            src="/images/sponsors/ForchtTransparent-KS.png"
             alt="Forcht Bank Logo"
           />
         </a>
