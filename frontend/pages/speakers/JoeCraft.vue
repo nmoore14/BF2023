@@ -7,7 +7,7 @@
         <div
           class="flex col nowrap justify-center items-center w-full speaker-display"
         >
-          <h1 class="brand">Mr. Joe Craft</h1>
+          <h1 class="brand text-center">Mr. Joe Craft</h1>
           <img
             src="/images/speakers/Craft, Joe Pic.jpg"
             alt="Image of Mr. Joe Craft"

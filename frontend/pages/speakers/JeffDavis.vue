@@ -7,7 +7,7 @@
         <div
           class="flex col nowrap justify-center items-center w-full speaker-display"
         >
-          <h1 class="brand">Mr. Jeffrey W. Davis</h1>
+          <h1 class="brand text-center">Mr. Jeffrey W. Davis</h1>
           <img
             src="/images/speakers/Davis, Jeff Pic.jpg"
             alt="Image of Mr. Jeffrey W. Davis"

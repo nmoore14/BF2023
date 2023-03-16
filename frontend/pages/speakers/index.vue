@@ -68,6 +68,10 @@ const Speakers = [
 </script>
 
 <style lang="scss" scoped>
+.keynote-speakers {
+  margin-top: 4rem;
+}
+
 .speakers {
   margin-top: 4rem;
   column-gap: 1.5rem;
@@ -84,6 +88,10 @@ const Speakers = [
 @media only screen and (max-width: 714px) {
   .page {
     margin-top: 8rem;
+  }
+
+  .keynote-speakers {
+    margin-top: 1rem;
   }
 
   .speakers {

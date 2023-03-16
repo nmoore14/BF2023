@@ -7,7 +7,7 @@
         <div
           class="flex col nowrap justify-center items-center w-full speaker-display"
         >
-          <h1 class="brand">Mr. Charles Reed</h1>
+          <h1 class="brand text-center">Mr. Charles Reed</h1>
           <img
             src="/images/speakers/Reed, Charles.jpg"
             alt="Image of Mr. Charles Reed"

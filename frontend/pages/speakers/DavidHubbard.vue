@@ -7,7 +7,7 @@
         <div
           class="flex col nowrap justify-center items-center w-full speaker-display"
         >
-          <h1 class="brand">Mr. David Hubbard</h1>
+          <h1 class="brand text-center">Mr. David Hubbard</h1>
           <img
             src="/images/speakers/Hubbard, David Pic.jpeg"
             alt="Image of Mr. David Hubbard"

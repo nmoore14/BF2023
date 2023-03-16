@@ -7,7 +7,7 @@
         <div
           class="flex col nowrap justify-center items-center w-full speaker-display"
         >
-          <h1 class="brand">Ms. Barbara Johnston</h1>
+          <h1 class="brand text-center">Ms. Barbara Johnston</h1>
           <img
             src="/images/speakers/Johnston, Barbara Pic.jpg"
             alt="Image of Ms. Barbara Johnston"
