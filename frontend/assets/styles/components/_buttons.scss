@@ -1,0 +1,65 @@
+.btn {
+  background-image: none;
+  border: none;
+  padding: .25rem .75rem;
+  border-radius: .13rem;
+  font-family: $font;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: $uc-red;
+  color: $gray-200;
+  font-size: 1.13rem;
+  letter-spacing: .13rem;
+  font-weight: 600;
+}
+
+.btn-primary-ghost {
+  background-color: transparent;
+  color: $gray-200;
+  font-size: 1.13rem;
+  letter-spacing: .13rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration: none;
+}
+
+.btn-primary-ghost-2 {
+  background-color: transparent;
+  color: $gray-200;
+  font-size: 1.13rem;
+  letter-spacing: .13rem;
+  font-weight: 600;
+  border: solid $gray-200 2px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: $uc-blue;
+  color: $gray-200;
+  font-size: 1.13rem;
+  letter-spacing: .13rem;
+  font-weight: 600;
+}
+
+/* Hover states */
+.btn-primary:hover {
+  cursor: pointer;
+  transition: ease-in-out .2s;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .25);
+}
+
+.btn-primary-ghost:hover {
+  cursor: pointer;
+  transition: ease-in-out .2s;
+  transform: scale(1.05);
+}
+
+.btn-secondary:hover {
+  cursor: pointer;
+  transition: ease-in-out .2s;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .25);
+}

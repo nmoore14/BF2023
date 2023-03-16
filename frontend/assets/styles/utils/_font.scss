@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+$font: 'Source Sans Pro', sans-serif;
+
+.brand {
+  font-family: $font;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.title {
+  font-family: $font;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.title-info {
+  font-family: $font;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.sub-title-info {
+  font-family: $font;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.body-text {
+  font-family: $font;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.body-info {
+  font-family: $font;
+  font-size: 1.75rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: $uc-blue;
+}
+
+.text-center {
+  text-align: center;
+}
