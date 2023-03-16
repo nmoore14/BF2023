@@ -9,7 +9,7 @@
         >
           <h1 class="brand text-center">Mr. Charles Reed</h1>
           <img
-            src="/images/speakers/Reed, Charles.jpg"
+            src="/images/speakers/ReedCharles.jpg"
             alt="Image of Mr. Charles Reed"
           />
           <h2 class="title-info speaker-title">President</h2>

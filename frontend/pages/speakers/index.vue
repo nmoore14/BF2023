@@ -31,7 +31,7 @@ const KeynoteSpeakers = [
     name: "Mr. Joe Craft",
     title: "Chairman, President and CEO",
     company: "Alliance Resource Partners, LP",
-    picture: "/images/speakers/Craft, Joe Pic.jpg",
+    picture: "/images/speakers/CraftJoe_Pic.jpg",
     link: "/speakers/JoeCraft"
   },
 ]
@@ -40,28 +40,28 @@ const Speakers = [
     name: "Mr. David Hubbard",
     title: "Chief of Legislative, State and Local Affairs",
     company: "National Security Agency",
-    picture: "/images/speakers/Hubbard, David Pic.jpeg",
+    picture: "/images/speakers/HubbardDavid_Pic.jpeg",
     link: "/speakers/DavidHubbard"
   },
   {
     name: "Ms. Barbara Johnston",
     title: "Creative Director",
     company: "IDEA Johnston",
-    picture: "/images/speakers/Johnston, Barbara Pic.jpg",
+    picture: "/images/speakers/JohnstonBarbara_Pic.jpg",
     link: "/speakers/BarbaraJohnston"
   },
   {
     name: "Mr. Charles Reed",
     title: "President",
     company: "Reed Enterprises, Inc.",
-    picture: "/images/speakers/Reed, Charles.jpg",
+    picture: "/images/speakers/ReedCharles.jpg",
     link: "/speakers/CharlesReed"
   },
   {
     name: "Mr. Jeffrey W. Davis",
     title: "Business Development and Commercial Training Director",
     company: "Interplastic Corporation/North American Composites",
-    picture: "/images/speakers/Davis, Jeff Pic.jpg",
+    picture: "/images/speakers/DavisJeff_Pic.jpg",
     link: "/speakers/JeffDavis"
   },
 ];

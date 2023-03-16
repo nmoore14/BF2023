@@ -9,7 +9,7 @@
         >
           <h1 class="brand text-center">Mr. Joe Craft</h1>
           <img
-            src="/images/speakers/Craft, Joe Pic.jpg"
+            src="/images/speakers/CraftJoe_Pic.jpg"
             alt="Image of Mr. Joe Craft"
           />
           <h2 class="title-info speaker-title">Chairman, President and CEO</h2>

@@ -9,7 +9,7 @@
         >
           <h1 class="brand text-center">Mr. David Hubbard</h1>
           <img
-            src="/images/speakers/Hubbard, David Pic.jpeg"
+            src="/images/speakers/HubbardDavid_Pic.jpeg"
             alt="Image of Mr. David Hubbard"
           />
           <h2 class="title-info speaker-title">

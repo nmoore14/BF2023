@@ -9,7 +9,7 @@
         >
           <h1 class="brand text-center">Ms. Barbara Johnston</h1>
           <img
-            src="/images/speakers/Johnston, Barbara Pic.jpg"
+            src="/images/speakers/JohnstonBarbara_Pic.jpg"
             alt="Image of Ms. Barbara Johnston"
           />
           <h2 class="title-info speaker-title">Creative Director</h2>

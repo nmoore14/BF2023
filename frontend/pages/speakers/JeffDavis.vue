@@ -9,7 +9,7 @@
         >
           <h1 class="brand text-center">Mr. Jeffrey W. Davis</h1>
           <img
-            src="/images/speakers/Davis, Jeff Pic.jpg"
+            src="/images/speakers/DavisJeff_Pic.jpg"
             alt="Image of Mr. Jeffrey W. Davis"
           />
           <h2 class="title-info speaker-title">
