@@ -11,7 +11,7 @@
     <div class="footer-middle">
       <NuxtLink class="brand-footer" to="/">
         <img
-          src="/images/Business Forum Logo_No_Date_Blck625.png"
+          src="/images/BusinessForumLogo_No_Date_Blck625.png"
           alt="Business forum logo"
         />
       </NuxtLink>

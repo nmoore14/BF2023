@@ -3,7 +3,7 @@
     <main class="flex col justify-center items-center w-full my-1 px-2">
       <div class="page-title">
         <img
-          src="/images/Business Forum Logo_No_Date_Blck625.png"
+          src="/images/BusinessForumLogo_No_Date_Blck625.png"
           alt="Business forum logo"
         />
       </div>

@@ -45,7 +45,7 @@
         <li>
           <NuxtLink class="link-item-mobile-brand" to="/" @click="hideMenu">
             <img
-              src="/images/Business Forum Logo_No_Date_Blck625.png"
+              src="/images/BusinessForumLogo_No_Date_Blck625.png"
               alt="Business forum logo"
             />
           </NuxtLink>
