@@ -41,24 +41,28 @@ const Speakers = [
     title: "Chief of Legislative, State and Local Affairs",
     company: "National Security Agency",
     picture: "/images/speakers/Hubbard, David Pic.jpeg",
+    link: "/speakers/DavidHubbard"
   },
   {
     name: "Ms. Barbara Johnston",
     title: "Creative Director",
     company: "IDEA Johnston",
     picture: "/images/speakers/Johnston, Barbara Pic.jpg",
+    link: "/speakers/BarbaraJohnston"
   },
   {
     name: "Mr. Charles Reed",
     title: "President",
     company: "Reed Enterprises, Inc.",
     picture: "/images/speakers/Reed, Charles.jpg",
+    link: "/speakers/CharlesReed"
   },
   {
     name: "Mr. Jeffrey W. Davis",
     title: "Business Development and Commercial Training Director",
     company: "Interplastic Corporation/North American Composites",
     picture: "/images/speakers/Davis, Jeff Pic.jpg",
+    link: "/speakers/JeffDavis"
   },
 ];
 </script>
@@ -68,7 +72,7 @@ const Speakers = [
   margin-top: 4rem;
   column-gap: 1.5rem;
   row-gap: 4rem;
-  padding: 0 16rem;
+  padding: 0 24rem;
 }
 
 @media only screen and (max-width: 1400px) {
