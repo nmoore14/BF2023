@@ -1,4 +1,7 @@
 version: '3'
+networks:
+  frontend-network:
+    external: true
 services:
   db:
     image: mysql:latest
@@ -8,7 +11,7 @@ services:
       MYSQL_PASSWORD: password_2023
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     volumes:
-      - "./db:/docker-entrypoint-initdb.d"
+      - ./db:/docker-entrypoint-initdb.d
     networks:
       - bf2023-docker
   www:
@@ -36,5 +39,6 @@ services:
     networks:
       - bf2023-docker
 networks:
-  edu-docker:
+  bf2023-docker:
     driver: bridge
+
