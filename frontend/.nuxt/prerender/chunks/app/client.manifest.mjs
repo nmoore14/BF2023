@@ -1,10 +1,10 @@
 const client_manifest = {
-  "_app.config.5871e218.js": {
+  "_composables.fa61c6be.js": {
     "resourceType": "script",
     "module": true,
-    "file": "app.config.5871e218.js",
+    "file": "composables.fa61c6be.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ]
   },
   "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
@@ -16,10 +16,10 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.76f4599f.js",
+    "file": "error-404.bc432a12.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs",
-      "_app.config.5871e218.js"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs",
+      "_composables.fa61c6be.js"
     ],
     "isDynamicEntry": true,
     "src": "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue"
@@ -37,10 +37,10 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.c5011c27.js",
+    "file": "error-500.6d3ff786.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs",
-      "_app.config.5871e218.js"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs",
+      "_composables.fa61c6be.js"
     ],
     "isDynamicEntry": true,
     "src": "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
@@ -49,12 +49,12 @@ const client_manifest = {
     "file": "error-500.26873dcc.css",
     "resourceType": "style"
   },
-  "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.css": {
+  "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.css": {
     "resourceType": "style",
     "file": "entry.805a7c00.css",
-    "src": "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.css"
+    "src": "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.css"
   },
-  "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs": {
+  "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs": {
     "resourceType": "script",
     "module": true,
     "assets": [
@@ -70,9 +70,9 @@ const client_manifest = {
     "dynamicImports": [
       "virtual:nuxt:/Users/nickmoore_rush/Desktop/projects/school/bf2023/frontend/.nuxt/error-component.mjs"
     ],
-    "file": "entry.b3034718.js",
+    "file": "entry.27ea470b.js",
     "isEntry": true,
-    "src": "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+    "src": "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
   },
   "entry.805a7c00.css": {
     "file": "entry.805a7c00.css",
@@ -136,9 +136,9 @@ const client_manifest = {
   "pages/faq/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.5894417b.js",
+    "file": "index.d74091f5.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/faq/index.vue"
@@ -152,9 +152,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.ff9f1602.js",
+    "file": "index.f5d1cc6f.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/forum/index.vue"
@@ -165,22 +165,22 @@ const client_manifest = {
   },
   "pages/index.css": {
     "resourceType": "style",
-    "file": "index.c2b010b9.css",
+    "file": "index.122eab9c.css",
     "src": "pages/index.css"
   },
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.2974e52b.js",
+    "file": "index.55cabaa4.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/index.vue"
   },
-  "index.c2b010b9.css": {
-    "file": "index.c2b010b9.css",
+  "index.122eab9c.css": {
+    "file": "index.122eab9c.css",
     "resourceType": "style"
   },
   "pages/loginRegister/index.css": {
@@ -192,9 +192,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.b84b8c38.js",
+    "file": "index.c36bab22.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/loginRegister/index.vue"
@@ -212,9 +212,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "BarbaraJohnston.24eea231.js",
+    "file": "BarbaraJohnston.e11eb2f3.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/speakers/BarbaraJohnston.vue"
@@ -232,9 +232,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "CharlesReed.4b5aa672.js",
+    "file": "CharlesReed.49334858.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/speakers/CharlesReed.vue"
@@ -252,9 +252,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "DavidHubbard.2027b483.js",
+    "file": "DavidHubbard.29a2e033.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/speakers/DavidHubbard.vue"
@@ -272,9 +272,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "JeffDavis.d3a7badc.js",
+    "file": "JeffDavis.96c63130.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/speakers/JeffDavis.vue"
@@ -292,9 +292,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "JoeCraft.066a4b12.js",
+    "file": "JoeCraft.8e8231aa.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/speakers/JoeCraft.vue"
@@ -312,9 +312,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "index.fee0d107.js",
+    "file": "index.3161f2bd.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "pages/speakers/index.vue"
@@ -330,9 +330,9 @@ const client_manifest = {
       "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/.pnpm/@nuxt+ui-templates@1.1.1/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.0b6ec390.js",
+    "file": "error-component.067dcf2b.js",
     "imports": [
-      "node_modules/.pnpm/nuxt@3.2.2_sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
+      "node_modules/.pnpm/nuxt@3.2.2_eslint@8.36.0+sass@1.58.3/node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
     "src": "virtual:nuxt:/Users/nickmoore_rush/Desktop/projects/school/bf2023/frontend/.nuxt/error-component.mjs"

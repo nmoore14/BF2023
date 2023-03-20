@@ -1,10 +1,14 @@
 <?php
+use DotEnv;
+
+(new DotEnv(__DIR__ . '../.env'))->load();
+
 class Config {
   // DB Details
-  private const DBHOST = 'db';
-  private const DBNAME = 'lamp_bf2023';
-  private const DBUSER = 'nmoore_bf2023';
-  private const DBPASS = 'password_2023';
+  private const DBHOST = getenv('DBHOST');
+  private const DBNAME = getenv('DBNAME');
+  private const DBUSER = getenv('DBUSER');
+  private const DBPASS = getenv('DBPASS');
 
   // Data source
   private $dbs = 'mysql:host=' . self::DBHOST . ';dbname=' . self::DBNAME . '';
@@ -18,7 +22,6 @@ class Config {
       $this->conn = new PDO($this->dbs, self::DBUSER, self::DBPASS);
       $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-      var_dump($this->dbs);
       die('Connection Failed : ' . $e->getMessage());
     }
 

@@ -484,11 +484,11 @@ const errorHandler = (async function errorhandler(error, event) {
   event.node.res.end(await res.text());
 });
 
-const _lazy_THYBzx = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_12p4Z2 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_THYBzx, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_THYBzx, lazy: true, middleware: false, method: undefined }
+  { route: '/__nuxt_error', handler: _lazy_12p4Z2, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_12p4Z2, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

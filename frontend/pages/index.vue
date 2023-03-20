@@ -5,6 +5,10 @@
       <ForumCard />
       <div class="flex row wrap justify-center items-center w-full my-1 p-1 event-cards">
         <h1 class="w-full title event-section-title">Events</h1>
+        <button class="btn btn-primary" @click="users()">Get Users</button>
+        <template v-if="viewingUser">
+          <h2>{{ users }}</h2>
+        </template>
         <EventCard
           v-for="event in Events"
           :startTime=event.startTime
@@ -19,6 +23,18 @@
 </template>
 
 <script setup lang="ts">
+  const viewingUser = ref(false)
+
+  const users  = async() => {
+    await useFetch('http://nmoore70709.ksshosting.com/api/index.php/user/get/', {
+      onResponse({ response }) {
+        console.log(response._data[0])
+        viewingUser.value = true
+        return response._data[0]
+      }
+    })
+  }
+
   const Events = [
     {
       startTime: "8:00",

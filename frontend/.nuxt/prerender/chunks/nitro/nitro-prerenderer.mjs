@@ -436,10 +436,10 @@ const errorHandler = (async function errorhandler(error, event) {
   event.node.res.end(await res.text());
 });
 
-const _lazy_THYBzx = () => import('../renderer.mjs').then(function (n) { return n.r; });
+const _lazy_12p4Z2 = () => import('../renderer.mjs').then(function (n) { return n.r; });
 
 const handlers = [
-  { route: '/**', handler: _lazy_THYBzx, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_12p4Z2, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

@@ -3,7 +3,6 @@ include_once 'Config.php';
 
 class Database extends Config {
   public function fetch($table) {
-    var_dump($table);
     $sql = '';
 
     switch ($table) {

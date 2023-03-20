@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
   vite: {
@@ -10,4 +9,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  modules: [
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: [["defineStore", "definePiniaStore"]],
+      },
+    ],
+  ],
 });
