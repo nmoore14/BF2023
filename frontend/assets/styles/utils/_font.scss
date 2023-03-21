@@ -43,9 +43,22 @@ $font: 'Source Sans Pro', sans-serif;
 
 .faq-title {
   font-family: $font;
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 300;
   color: $uc-blue;
+}
+
+.faq-sub-title {
+  font-family: $font;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.faq-text {
+  font-family: $font;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 .text-center {

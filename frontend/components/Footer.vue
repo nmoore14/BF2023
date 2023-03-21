@@ -18,16 +18,16 @@
     </div>
     <div class="footer-right">
       <ul class="flex row wrap w-full justify-center items-center">
-        <li>
+        <li class="footer-list-item">
           <NuxtLink class="link-item" to="/forum">The Forum</NuxtLink>
         </li>
-        <li>
+        <li class="footer-list-item">
           <NuxtLink class="link-item" to="/speakers">Speakers</NuxtLink>
         </li>
-        <li>
+        <li class="footer-list-item">
           <NuxtLink class="link-item" to="/faq">FAQ</NuxtLink>
         </li>
-        <li>
+        <li class="footer-list-item">
           <NuxtLink class="link-item-cta" to="/loginRegister"
             >Login/Register</NuxtLink
           >
@@ -61,7 +61,7 @@ footer {
   height: auto;
 }
 
-li {
+.footer-list-item {
   list-style-type: none;
   padding: 1rem;
 }
