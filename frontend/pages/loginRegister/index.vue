@@ -17,7 +17,7 @@
           <i class="fas fa-user-plus fa-5x"></i>
           <h2 class="title">Need to Register</h2>
           <p class="body-text">
-            Click below to join the 2023 Business Spring Forum
+            Click below to join the 2023 Business Forum for Young Professionals
           </p>
           <NuxtLink
             class="btn btn-primary-ghost-2 register-button"

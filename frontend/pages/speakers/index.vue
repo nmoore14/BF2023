@@ -37,6 +37,13 @@ const KeynoteSpeakers = [
 ]
 const Speakers = [
   {
+    name: "Mr. Jeffrey W. Davis",
+    title: "Business Development and Commercial Training Director",
+    company: "Interplastic Corporation/North American Composites",
+    picture: "/images/speakers/DavisJeff_Pic.jpg",
+    link: "/speakers/JeffDavis"
+  },
+  {
     name: "Mr. David Hubbard",
     title: "Chief of Legislative, State and Local Affairs",
     company: "National Security Agency",
@@ -56,13 +63,6 @@ const Speakers = [
     company: "Reed Enterprises, Inc.",
     picture: "/images/speakers/ReedCharles.jpg",
     link: "/speakers/CharlesReed"
-  },
-  {
-    name: "Mr. Jeffrey W. Davis",
-    title: "Business Development and Commercial Training Director",
-    company: "Interplastic Corporation/North American Composites",
-    picture: "/images/speakers/DavisJeff_Pic.jpg",
-    link: "/speakers/JeffDavis"
   },
 ];
 </script>

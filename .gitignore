@@ -1,2 +1,3 @@
 frontend/node_modules/*
 backend/www/api/.env
+frontend/.nuxt/
