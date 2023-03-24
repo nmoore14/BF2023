@@ -64,3 +64,14 @@ $font: 'Source Sans Pro', sans-serif;
 .text-center {
   text-align: center;
 }
+
+@media only screen and (max-width: 714px) {
+  .faq-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .faq-sub-title {
+    font-size: 1.25rem;
+  }
+}

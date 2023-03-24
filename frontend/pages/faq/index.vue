@@ -166,4 +166,11 @@
   padding-left: 10rem;
   padding-right: 10rem;
 }
+
+@media only screen and (max-width: 714px) {
+  .main-faq {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
 </style>

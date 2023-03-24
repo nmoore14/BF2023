@@ -28,8 +28,19 @@
 .faq-section-list-nested > .nested-item {
   list-style-type: none;
 }
+
 .faq-text {
   font-family: $font;
   font-size: 1rem;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 714px) {
+  .faq-section-list {
+    margin-left: 1.5rem;
+  }
+
+  .faq-section-list-nested {
+    padding-left: 1.5rem;
+  }
 }
