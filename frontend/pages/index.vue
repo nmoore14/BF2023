@@ -11,6 +11,7 @@
           :endTime=event.endTime
           :title=event.title
           :location=event.location
+          :subLocation=event.subLocation
         />
       </div>
       <Sponsors />
@@ -24,31 +25,36 @@
       startTime: "8:00",
       endTime: "9:15",
       title: "Registration",
-      location: "Hutton School of Business"
+      location: "Grace Crum Rollins Lobby",
+      subLocation: "",
     },
     {
       startTime: "9:30",
       endTime: "10:15",
       title: "Keynote/Opening Session",
-      location: "Kohn Theatre"
+      location: "Kohn Theatre",
+      subLocation: "Grace Crum Rollins",
     },   
     {
       startTime: "10:30",
       endTime: "11:15",
       title: "Session 1",
-      location: "Hutton School of Business"
+      location: "Hutton School of Business",
+      subLocation: "",
     },
     {
       startTime: "11:30",
       endTime: "12:15",
       title: "Session 2",
-      location: "Hutton School of Business"
+      location: "Hutton School of Business",
+      subLocation: "",
     },
     {
       startTime: "12:15",
       endTime: "12:30",
       title: "Additional Meet & Greet",
-      location: "Hutton School of Business"
+      location: "Hutton School of Business",
+      subLocation: "",
     },
 
   ]

@@ -6,6 +6,7 @@
     <div class="card-content">
       <p class="body-info">{{ startTime }} - {{ endTime }}</p>
       <h2 class="title-info">{{ location }}</h2>
+      <h3 class="sub-title-info">{{ subLocation }}</h3>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@ const props = defineProps({
   endTime: String,
   title: String,
   location: String,
+  subLocation: String,
 });
 </script>
 
