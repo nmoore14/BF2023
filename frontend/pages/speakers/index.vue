@@ -40,7 +40,7 @@ const Speakers = [
     name: "Mr. Jeffrey W. Davis",
     title: "Business Development and Commercial Training Director",
     company: "Interplastic Corporation/North American Composites",
-    picture: "/images/speakers/Davis, Jeff Pic.jpg",
+    picture: "/images/speakers/DavisJeff_Pic.jpg",
     link: "/speakers/JeffDavis"
   },
   {
