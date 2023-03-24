@@ -34,7 +34,7 @@ export default {
 }
 
 .hero {
-  height: 25rem;
+  height: 30rem;
   margin-top: 0;
   margin-left: 0;
   background-color: $uc-red;
