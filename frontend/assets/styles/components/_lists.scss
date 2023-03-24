@@ -1,0 +1,46 @@
+.faq-section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.faq-section-list {
+  margin-left: 1.5rem;
+}
+
+.list-item {
+  list-style-type: disc;
+  padding: .25rem;
+}
+
+.nested-item {
+  list-style-type: none;
+}
+
+.faq-section-list-nested {
+  padding-left: 1.5rem;
+}
+
+.faq-section-list-nested > li{
+  list-style-type: circle;
+  padding: .25rem;
+}
+
+.faq-section-list-nested > .nested-item {
+  list-style-type: none;
+}
+
+.faq-text {
+  font-family: $font;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 714px) {
+  .faq-section-list {
+    margin-left: 1.5rem;
+  }
+
+  .faq-section-list-nested {
+    padding-left: 1.5rem;
+  }
+}

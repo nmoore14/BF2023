@@ -34,12 +34,12 @@ export default {
 }
 
 .hero {
-  height: 25rem;
+  height: 30rem;
   margin-top: 0;
   margin-left: 0;
   background-color: $uc-red;
   overflow: hidden;
-  background-image: url("/images/conference-1.jpg");
+  background-image: url("/images/hsb-1.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
