@@ -5,6 +5,8 @@ networks:
 services:
   db:
     image: mysql:latest
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: lamp_bf2023
       MYSQL_USER: nmoore_bf2023

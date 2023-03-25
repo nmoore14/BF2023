@@ -1,9 +1,11 @@
 CREATE TABLE lamp_bf2023.users (
   user_id INT NOT NULL AUTO_INCREMENT,
-  student_id INT NOT NULL,
+  student_id VARCHAR(50) NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
-  password VARCHAR(255) NOT NULL,
+  class VARCHAR(50) NULL,
+  activated INT(3) NOT NULL DEFAULT 0,
+  password VARCHAR(255) NOT NULL DEFAULT 'bf2023!',
   token VARCHAR(255),
   PRIMARY KEY (user_id)
 );
