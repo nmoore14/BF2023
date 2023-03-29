@@ -1,14 +1,11 @@
 <?php
-use DotEnv;
-
-(new DotEnv(__DIR__ . '../.env'))->load();
 
 class Config {
   // DB Details
-  private const DBHOST = getenv('DBHOST');
-  private const DBNAME = getenv('DBNAME');
-  private const DBUSER = getenv('DBUSER');
-  private const DBPASS = getenv('DBPASS');
+  private const DBHOST = 'db';
+  private const DBNAME = 'lamp_bf2023';
+  private const DBUSER = 'nmoore_bf2023';
+  private const DBPASS = 'password_2023';
 
   // Data source
   private $dbs = 'mysql:host=' . self::DBHOST . ';dbname=' . self::DBNAME . '';

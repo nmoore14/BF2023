@@ -1,5 +1,7 @@
 <?php
 
+namespace BF2023;
+
 class DotEnv
 {
     /**

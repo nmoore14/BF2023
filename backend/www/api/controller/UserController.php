@@ -1,10 +1,12 @@
 <?php
 include_once PROJECT_ROOT_PATH . 'src/Database.php';
 
-class UserController extends BaseController {
+class UserController extends BaseController
+{
   protected $users = null;
 
-  public function __construct() {
+  public function __construct()
+  {
     try {
       $this->users = new Database();
     } catch (Error $e) {
@@ -14,10 +16,61 @@ class UserController extends BaseController {
     return $this->users;
   }
 
-  public function getUser() {
+  private function hashPassword($password) {
+    return password_hash($password, PASSWORD_DEFAULT);
+  }
+
+  private function updateValidUser($data, $validUser) {
+    $updateData = [
+      "activated" => 1,
+      "password" => $this->hashPassword($data["password"]),
+      "student_id" => $data["studentId"]
+    ];
+
+    $userUpdated = $this->users->updateUser($updateData);
+
+    if ($userUpdated) {
+      $this->sendOutput(
+        json_encode(array("student_id" => $data["studentId"],"updated" => true, "valid" => $validUser)),
+        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+      );
+    } else {
+      $this->sendOutput(
+        json_encode(array(
+          "student_id" => $data["student_id"],
+          "updated" => false,
+        )),
+        array('Content-Type: application/json', 'error')
+      );
+    }
+  }
+
+  public function checkValidUser($data)
+  {
+    $validUser = $this->users->checkValidUser($data["studentId"]);
+
+    if ($validUser) {
+      $this->updateValidUser($data, $validUser);
+      $this->sendOutput(
+        json_encode(array("student_id" => $data, "valid" => true, $validUser)),
+        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+      );
+    } else {
+      $this->sendOutput(
+        json_encode(array(
+          "student_id" => $data,
+          "valid" => false,
+        )),
+        array('Content-Type: application/json', 'error')
+      );
+    }
+  }
+
+  public function getUser()
+  {
     $data = $this->users->fetch('users');
 
-    if($data) {
+    if ($data) {
       $this->sendOutput(
         json_encode($data),
         array('Content-Type: application/json', 'HTTP/1.1 200 OK')

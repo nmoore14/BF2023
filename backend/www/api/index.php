@@ -25,7 +25,13 @@ $userController = new UserController();
 
 // Get the routes
 if ($uri_api_path == 'user') {
+  $data = json_decode(file_get_contents('php://input'), true);
   $strMethodName = $uri_api_method . "User";
-  $userController->{$strMethodName}();
+
+  if ($uri_api_method != 'get') {
+    $userController->{$strMethodName}($data);
+  } else {
+    $userController->{$strMethodName}();
+  }
 }
 ?>
