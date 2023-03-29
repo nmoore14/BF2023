@@ -8,10 +8,13 @@
       >
         <div class="flex col nowrap justify-center items-center login">
           <h1 class="title">Log in</h1>
-          <p class="body-info">Coming Soon!</p>
-          <input type="email" placeholder="Email" disabled />
-          <input type="password" placeholder="Password" disabled /><br />
-          <button disabled>log in</button>
+          <button
+            class="btn btn-primary"
+            @click="toggleShowActive()"
+          >
+            Activate Account
+          </button>
+          <button class="btn btn-primary">Log In</button>
         </div>
         <div class="flex col nowrap justify-center items-center register">
           <i class="fas fa-user-plus fa-5x"></i>
@@ -29,8 +32,21 @@
         </div>
       </div>
     </main>
+    <ActivateUserModal v-show="showActivateUser" @user-activated="toggleShowActive" />
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+import ActivateUserModal from '@/components/modals/ActivateUserModal.vue'
+
+const showActivateUser = ref(false)
+
+const toggleShowActive = () => {
+  showActivateUser.value = !showActivateUser.value
+}
+</script>
 
 <style lang="scss">
 .page-login-registration {
@@ -47,8 +63,8 @@
   padding: 1rem 2rem;
 }
 
-input[type="email"],
-input[type="password"] {
+input[type='email'],
+input[type='password'] {
   width: 100%;
   padding: 10px;
   border: none;
@@ -73,7 +89,7 @@ input[type="password"] {
 
 .login button {
   width: 100%;
-  margin: 30px 0;
+  margin-top: 1rem;
   padding: 10px;
   border: none;
   background-color: $uc-red;
