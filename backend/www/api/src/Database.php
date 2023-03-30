@@ -22,6 +22,14 @@ class Database extends Config {
     }
   }
 
+  public function checkLogin($data) {
+    $sql = "SELECT student_id, password FROM users WHERE student_id=:student_id";
+    $req = $this->conn->prepare($sql);
+    $req->execute($data);
+
+    return $req->fetchAll();
+  }
+
   public function fetch($table) {
     $sql = '';
 

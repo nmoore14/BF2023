@@ -16,6 +16,12 @@ class UserController extends BaseController
     return $this->users;
   }
 
+  private function generateToken($studentId) {
+    $string = sha1((rand())) . $studentId;
+    $tokenString = substr($string, 0, 16);
+    return $tokenString;
+  }
+
   private function hashPassword($password) {
     return password_hash($password, PASSWORD_DEFAULT);
   }
@@ -66,6 +72,31 @@ class UserController extends BaseController
   public function activateUser($data)
   {
     $this->updateValidUser($data);
+  }
+
+  public function loginUser($data) {
+    $loginData = [
+      "student_id" => $data["studentId"],
+    ];
+
+    $user = $this->users->checkLogin($loginData);
+
+    $validLogin = password_verify($data["password"], $user[0]["password"]);
+
+    if ($validLogin) {
+      $this->sendOutput(
+        json_encode($data),
+        array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+      );
+    } else {
+      $this->sendOutput(
+        json_encode(array(
+          $loginData,
+          'error'
+        )),
+        array('Content-Type: application/json', 'error')
+      );
+    }
   }
 
   public function getUser()

@@ -14,7 +14,12 @@
           >
             Activate Account
           </button>
-          <button class="btn btn-primary">Log In</button>
+          <button
+            class="btn btn-primary"
+            @click="toggleShowLogin()"
+          >
+            Log In
+          </button>
         </div>
         <div class="flex col nowrap justify-center items-center register">
           <i class="fas fa-user-plus fa-5x"></i>
@@ -32,7 +37,16 @@
         </div>
       </div>
     </main>
-    <ActivateUserModal v-show="showActivateUser" @close-modal="toggleShowActive" @user-activated="toggleShowActive" />
+    <ActivateUserModal
+      v-show="showActivateUser"
+      @close-modal="toggleShowActive"
+      @user-activated="toggleShowActive"
+    />
+    <LoginModal
+      v-show="showLoginUser"
+      @close-modal="toggleShowLogin"
+      @user-loggedin="toggleShowLogin"
+    />
   </div>
 </template>
 
@@ -40,11 +54,17 @@
 import { ref } from 'vue'
 
 import ActivateUserModal from '@/components/modals/ActivateUserModal.vue'
+import LoginModal from '@/components/modals/LoginModal.vue'
 
 const showActivateUser = ref(false)
+const showLoginUser = ref(false)
 
 const toggleShowActive = () => {
   showActivateUser.value = !showActivateUser.value
+}
+
+const toggleShowLogin = () => {
+  showLoginUser.value = !showLoginUser.value
 }
 </script>
 

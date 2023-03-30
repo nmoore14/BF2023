@@ -9,39 +9,28 @@
       </div>
       <div
         class="flex col justify-center items-center w-full activate-inputs"
-        v-if="!userDidActivate"
+        v-if="!loginSuccessful"
       >
         <h2
           class="activated-user-title"
-          v-if="activatedUser"
         >
-          User already activated
+          Login
         </h2>
         <input
           type="text"
-          name="student_id"
-          id="student-id"
+          name="student_id_login"
+          id="student-id-login"
           class="text-input"
-          :class="[validUser && !activatedUser ? 'valid-input' : '']"
           placeholder="Student ID #"
-          v-model="studentId"
-          @blur="findValidUser"
+          v-model="loginStudentId"
         />
         <input
           type="password"
-          name="new_password"
-          id="new-password"
+          name="password_login"
+          id="password-login"
           class="text-input"
           placeholder="Enter New Password"
-          v-model="password"
-        />
-        <input
-          type="password"
-          name="confirm-new-password"
-          class="text-input"
-          id="confirm-new-password"
-          placeholder="Confirm New Password"
-          v-model="passwordConfirm"
+          v-model="loginPassword"
         />
         <div
           class="flex row wrap w-full justify-between items-center mt-2 activate-btns"
@@ -55,20 +44,20 @@
           <button
             class="btn"
             :class="[
-              confirmPassword && !activatedUser
+                passwordLength
                 ? 'btn-secondary'
                 : 'btn-primary-disabled',
             ]"
-            :disabled="confirmPassword && !activatedUser ? false : true"
-            @click="userValidate"
+            :disabled="!passwordLength"
+            @click="userLogin"
           >
-            Activate
+            Login
           </button>
         </div>
       </div>
       <div
         class="flex col justify-around items-center h-full"
-        v-if="userDidActivate"
+        v-if="loginSuccessful"
       >
         <h1 class="success-title">Success!</h1>
         <i class="pi pi-check-circle success-icon"></i>
@@ -80,69 +69,43 @@
 
 <script setup>
 import { ref } from 'vue'
-const emit = defineEmits(['userActivated', 'closeModal'])
+const emit = defineEmits(['userLoggedin', 'closeModal'])
 
-const validUser = ref(null)
-const checkingValid = ref(false)
-const activatedUser = ref(false)
-const userDidActivate = ref(false)
+const loginSuccessful = ref(false)
 
-const studentId = ref(null)
-const password = ref(null)
-const passwordConfirm = ref(null)
+const loginStudentId = ref(null)
+const loginPassword = ref('')
 
 const closeModal = () => {
   emit('closeModal')
 }
 
 const resetForm = () => {
-  studentId.value = null
-  password.value = null
-  passwordConfirm.value = null
-  activatedUser.value = false
+  loginStudentId.value = null
+  loginPassword.value = ''
 }
-
-const confirmPassword = computed(() => {
-  return password.value && passwordConfirm.value === password.value
-})
 
 const test = () => {
   console.log('fired')
 }
 
-const findValidUser = async () => {
-  checkingValid.value = !checkingValid.value
-  await fetch('http://localhost/api/index.php/user/findValid/', {
-    method: 'POST',
-    body: JSON.stringify({ studentId: studentId.value }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data[0] != 'error') {
-        activatedUser.value = parseInt(data[0].activated)
-        validUser.value = true
-      } else {
-        validUser.value = false
-      }
-    })
-}
+const passwordLength = computed(() => {
+  return loginPassword.value.length > 0
+})
 
-const userValidate = async () => {
-  checkingValid.value = !checkingValid.value
-  const studentData = { studentId: studentId.value, password: password.value }
-  console.log(studentData)
-  await fetch('http://localhost/api/index.php/user/activate/', {
+const userLogin = async () => {
+  const studentData = { studentId: loginStudentId.value, password: loginPassword.value }
+  await fetch('http://localhost/api/index.php/user/login/', {
     method: 'POST',
     body: JSON.stringify(studentData),
   })
     .then((response) => response.json())
     .then((data) => {
-      userDidActivate.value = data.activated
-      if (validUser.value) {
-        setTimeout(() => {
-          emit('userActivated')
-        }, 5000)
-      }
+      loginSuccessful.value = true
+      setTimeout(() => {
+        emit('userLoggedin')
+      }, 5000);
+      console.log(data)
     })
     .catch((error) => {
       console.error('ERROR: ', error)
