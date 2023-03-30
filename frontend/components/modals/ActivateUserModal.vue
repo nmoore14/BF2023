@@ -2,17 +2,30 @@
   <div class="flex col justify-center items-center modal-overlay">
     <div class="flex col nowrap justify-start items-center modal">
       <div class="flex col justify-start items-end w-full close">
-        <i class="pi pi-times"></i>
+        <i
+          class="pi pi-times"
+          @click="closeModal()"
+        ></i>
       </div>
-      <div class="flex col justify-center items-center w-full activate-inputs">
+      <div
+        class="flex col justify-center items-center w-full activate-inputs"
+        v-if="!userDidActivate"
+      >
+        <h2
+          class="activated-user-title"
+          v-if="activatedUser"
+        >
+          User already activated
+        </h2>
         <input
           type="text"
           name="student_id"
           id="student-id"
           class="text-input"
-          :class="[validUser ? 'valid-input' : '']"
+          :class="[validUser && !activatedUser ? 'valid-input' : '']"
           placeholder="Student ID #"
           v-model="studentId"
+          @blur="findValidUser"
         />
         <input
           type="password"
@@ -33,16 +46,33 @@
         <div
           class="flex row wrap w-full justify-between items-center mt-2 activate-btns"
         >
-          <button class="btn btn-outline-warning" @click="resetForm">Clear</button>
+          <button
+            class="btn btn-outline-warning"
+            @click="resetForm"
+          >
+            Clear
+          </button>
           <button
             class="btn"
-            :class="[confirmPassword ? 'btn-secondary' : 'btn-primary-disabled']"
-            :disabled="!confirmPassword"
+            :class="[
+              confirmPassword && !activatedUser
+                ? 'btn-secondary'
+                : 'btn-primary-disabled',
+            ]"
+            :disabled="confirmPassword && !activatedUser ? false : true"
             @click="userValidate"
           >
             Activate
           </button>
         </div>
+      </div>
+      <div
+        class="flex col justify-around items-center h-full"
+        v-if="userDidActivate"
+      >
+        <h1 class="success-title">Success!</h1>
+        <i class="pi pi-check-circle success-icon"></i>
+        <h2 class="success-sub-title">Welcome to the 2023 Business Forum</h2>
       </div>
     </div>
   </div>
@@ -50,39 +80,70 @@
 
 <script setup>
 import { ref } from 'vue'
-const emit = defineEmits(['userActivated'])
+const emit = defineEmits(['userActivated', 'closeModal'])
 
 const validUser = ref(null)
 const checkingValid = ref(false)
+const activatedUser = ref(false)
+const userDidActivate = ref(false)
 
 const studentId = ref(null)
 const password = ref(null)
 const passwordConfirm = ref(null)
 
+const closeModal = () => {
+  emit('closeModal')
+}
+
 const resetForm = () => {
   studentId.value = null
   password.value = null
   passwordConfirm.value = null
+  activatedUser.value = false
 }
 
 const confirmPassword = computed(() => {
-  return password.value && (passwordConfirm.value === password.value)
-});
+  return password.value && passwordConfirm.value === password.value
+})
+
+const test = () => {
+  console.log('fired')
+}
+
+const findValidUser = async () => {
+  checkingValid.value = !checkingValid.value
+  await fetch('http://localhost/api/index.php/user/findValid/', {
+    method: 'POST',
+    body: JSON.stringify({ studentId: studentId.value }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data[0] != 'error') {
+        activatedUser.value = parseInt(data[0].activated)
+        validUser.value = true
+      } else {
+        validUser.value = false
+      }
+    })
+}
 
 const userValidate = async () => {
   checkingValid.value = !checkingValid.value
   const studentData = { studentId: studentId.value, password: password.value }
-  await fetch('http://localhost/api/index.php/user/checkValid/', {
+  await fetch('http://localhost/api/index.php/user/activate/', {
     method: 'POST',
     body: JSON.stringify(studentData),
   })
     .then((response) => response.json())
     .then((data) => {
-      validUser.value = data.valid
+      userDidActivate.value = data.activated
       if (validUser.value) {
-        emit('userActivated')
+        setTimeout(() => {
+          emit('userActivated')
+        }, 5000)
       }
-    }).catch((error) => {
+    })
+    .catch((error) => {
       console.error('ERROR: ', error)
     })
 }
@@ -110,12 +171,12 @@ const userValidate = async () => {
 }
 
 .close {
-  cursor: pointer;
   margin-top: -2rem;
   margin-right: -2rem;
 }
 
 .close > i {
+  cursor: pointer;
   background-color: $uc-red;
   color: $gray-200;
   font-size: 1rem;
@@ -125,5 +186,28 @@ const userValidate = async () => {
 
 .activate-inputs {
   padding: 1rem 5rem;
+}
+
+.success-icon {
+  font-size: 6rem;
+  color: green;
+}
+
+@media only screen and (max-width: 714px) {
+  .modal {
+    width: 100%;
+    height: 22rem;
+    border-radius: 0;
+  }
+
+  .close {
+    margin: 0;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
+
+  .close > i {
+    align-self: center;
+  }
 }
 </style>

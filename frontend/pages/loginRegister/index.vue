@@ -32,7 +32,7 @@
         </div>
       </div>
     </main>
-    <ActivateUserModal v-show="showActivateUser" @user-activated="toggleShowActive" />
+    <ActivateUserModal v-show="showActivateUser" @close-modal="toggleShowActive" @user-activated="toggleShowActive" />
   </div>
 </template>
 

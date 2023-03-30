@@ -3,15 +3,11 @@ include_once 'Config.php';
 
 class Database extends Config {
   public function checkValidUser($data) {
-    $sql = "SELECT * FROM users WHERE student_id=?";
+    $sql = "SELECT student_id, activated FROM users WHERE student_id=?";
     $req = $this->conn->prepare($sql);
     $req->execute([$data]);
 
-    if ($req->rowCount() > 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return $req->fetchAll();
   }
 
   public function updateUser($data) {

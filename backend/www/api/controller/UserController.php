@@ -20,7 +20,7 @@ class UserController extends BaseController
     return password_hash($password, PASSWORD_DEFAULT);
   }
 
-  private function updateValidUser($data, $validUser) {
+  private function updateValidUser($data) {
     $updateData = [
       "activated" => 1,
       "password" => $this->hashPassword($data["password"]),
@@ -31,39 +31,41 @@ class UserController extends BaseController
 
     if ($userUpdated) {
       $this->sendOutput(
-        json_encode(array("student_id" => $data["studentId"],"updated" => true, "valid" => $validUser)),
+        json_encode(array("student_id" => $data["studentId"],"updated" => true, "activated" => true)),
         array('Content-Type: application/json', 'HTTP/1.1 200 OK')
       );
     } else {
       $this->sendOutput(
         json_encode(array(
           "student_id" => $data["student_id"],
-          "updated" => false,
+          "activated" => false,
         )),
         array('Content-Type: application/json', 'error')
       );
     }
   }
 
-  public function checkValidUser($data)
-  {
+  public function findValidUser($data) {
     $validUser = $this->users->checkValidUser($data["studentId"]);
 
-    if ($validUser) {
-      $this->updateValidUser($data, $validUser);
+    if($validUser) {
       $this->sendOutput(
-        json_encode(array("student_id" => $data, "valid" => true, $validUser)),
+        json_encode($validUser),
         array('Content-Type: application/json', 'HTTP/1.1 200 OK')
       );
     } else {
       $this->sendOutput(
         json_encode(array(
-          "student_id" => $data,
-          "valid" => false,
+          'error'
         )),
         array('Content-Type: application/json', 'error')
       );
     }
+  }
+
+  public function activateUser($data)
+  {
+    $this->updateValidUser($data);
   }
 
   public function getUser()
