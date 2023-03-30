@@ -69,10 +69,14 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useUserStore } from '~/stores/user'
+
 const emit = defineEmits(['userLoggedin', 'closeModal'])
 
-const loginSuccessful = ref(false)
+const userStore = useUserStore()
+const { setUser } = userStore
 
+const loginSuccessful = ref(false)
 const loginStudentId = ref(null)
 const loginPassword = ref('')
 
@@ -102,6 +106,7 @@ const userLogin = async () => {
     .then((response) => response.json())
     .then((data) => {
       loginSuccessful.value = true
+      setUser(data)
       setTimeout(() => {
         emit('userLoggedin')
       }, 5000);

@@ -7,7 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import "primeicons/primeicons.css";
+import "primeicons/primeicons.css"
+import { useUserStore } from '~/stores/user'
 </script>
 
 <style lang="scss">
