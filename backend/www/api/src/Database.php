@@ -30,6 +30,25 @@ class Database extends Config {
     return $req->fetchAll();
   }
 
+  public function fetchUserData($data) {
+    $sql = "SELECT u.student_id,
+            u.first_name,
+            u.last_name,
+            ue.keynote_signup AS attending_keynote,
+            ue.session1_signup AS session1_id,
+            ue.session2_signup AS session2_id,
+            ue.alt_signup AS alt_id
+            FROM users u
+            LEFT JOIN user_events ue ON u.student_id = ue.student_id
+            WHERE u.student_id=:student_id
+    ";
+
+    $req = $this->conn->prepare($sql);
+    $req->execute($data);
+
+    return $req->fetchAll();
+  }
+
   public function fetch($table) {
     $sql = '';
 

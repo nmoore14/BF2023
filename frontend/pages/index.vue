@@ -22,6 +22,8 @@
 </template>
 
 <script setup lang="ts">
+import { useUserStore } from '~/stores/user'
+
 const Events = [
   {
     startTime: "8:00",

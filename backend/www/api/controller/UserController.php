@@ -84,8 +84,9 @@ class UserController extends BaseController
     $validLogin = password_verify($data["password"], $user[0]["password"]);
 
     if ($validLogin) {
+      $userData = $this->users->fetchUserData($loginData);
       $this->sendOutput(
-        json_encode($data),
+        json_encode($userData),
         array('Content-Type: application/json', 'HTTP/1.1 200 OK')
       );
     } else {

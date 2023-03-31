@@ -11,11 +11,7 @@
         class="flex col justify-center items-center w-full activate-inputs"
         v-if="!loginSuccessful"
       >
-        <h2
-          class="activated-user-title"
-        >
-          Login
-        </h2>
+        <h2 class="activated-user-title">Login</h2>
         <input
           type="text"
           name="student_id_login"
@@ -29,7 +25,7 @@
           name="password_login"
           id="password-login"
           class="text-input"
-          placeholder="Enter New Password"
+          placeholder="Password"
           v-model="loginPassword"
         />
         <div
@@ -43,11 +39,7 @@
           </button>
           <button
             class="btn"
-            :class="[
-                passwordLength
-                ? 'btn-secondary'
-                : 'btn-primary-disabled',
-            ]"
+            :class="[passwordLength ? 'btn-secondary' : 'btn-primary-disabled']"
             :disabled="!passwordLength"
             @click="userLogin"
           >
@@ -98,7 +90,10 @@ const passwordLength = computed(() => {
 })
 
 const userLogin = async () => {
-  const studentData = { studentId: loginStudentId.value, password: loginPassword.value }
+  const studentData = {
+    studentId: loginStudentId.value,
+    password: loginPassword.value,
+  }
   await fetch('http://localhost/api/index.php/user/login/', {
     method: 'POST',
     body: JSON.stringify(studentData),
@@ -109,8 +104,7 @@ const userLogin = async () => {
       setUser(data)
       setTimeout(() => {
         emit('userLoggedin')
-      }, 5000);
-      console.log(data)
+      }, 5000)
     })
     .catch((error) => {
       console.error('ERROR: ', error)
