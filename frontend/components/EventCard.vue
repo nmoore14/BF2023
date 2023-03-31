@@ -24,7 +24,7 @@ const props = defineProps({
 
 const current = new Date()
 const openTime = new Date('2023-04-05 09:30:00')
-console.log(current.toISOString())
+console.log(current.toISOString() < openTime.toISOString())
 console.log(openTime.toISOString());
 </script>
 

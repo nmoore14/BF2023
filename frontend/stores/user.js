@@ -1,8 +1,10 @@
+import { useLocalStorage } from "@vueuse/core"
+
 export const useUserStore = definePiniaStore('user-store', {
   state: () => {
     return {
-      loggedIn: false,
-      user: {},
+      loggedIn: useLocalStorage('loggedIn', false),
+      user: useLocalStorage('user', {}),
     }
   },
   getters: {},

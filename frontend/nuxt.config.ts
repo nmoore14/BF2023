@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   vite: {
     css: {
       preprocessorOptions: {
@@ -15,6 +15,7 @@ export default defineNuxtConfig({
       {
         autoImports: [["defineStore", "definePiniaStore"]],
       },
+      "@vueuse/core",
     ],
   ],
 });
