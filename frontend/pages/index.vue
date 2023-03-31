@@ -14,6 +14,7 @@
           :title="event.title"
           :location="event.location"
           :subLocation="event.subLocation"
+          :link="event.link"
         />
       </div>
       <Sponsors />
@@ -21,16 +22,22 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { ref, watch } from 'vue'
+import { storeToRefs } from 'pinia';
 import { useUserStore } from '~/stores/user'
 
-const Events = [
+const userStore = useUserStore()
+const { user, loggedIn } = storeToRefs(userStore);
+
+const baseEvents = [
   {
     startTime: "8:00",
     endTime: "9:15",
     title: "Registration",
     location: "Grace Crum Rollins Lobby",
     subLocation: "",
+    link: "https://www.google.com",
   },
   {
     startTime: "9:30",
@@ -38,6 +45,7 @@ const Events = [
     title: "Keynote/Opening Session",
     location: "Kohn Theatre",
     subLocation: "Grace Crum Rollins",
+    link: "https://www.google.com",
   },
   {
     startTime: "10:30",
@@ -45,6 +53,7 @@ const Events = [
     title: "Session 1",
     location: "Hutton School of Business",
     subLocation: "",
+    link: "https://www.google.com",
   },
   {
     startTime: "11:30",
@@ -52,6 +61,7 @@ const Events = [
     title: "Session 2",
     location: "Hutton School of Business",
     subLocation: "",
+    link: "https://www.google.com",
   },
   {
     startTime: "12:15",
@@ -59,8 +69,31 @@ const Events = [
     title: "Additional Meet & Greet",
     location: "Hutton School of Business",
     subLocation: "",
+    link: "https://www.google.com",
   },
 ];
+
+const Events = userStore.loggedIn ? [] : baseEvents;
+
+if (userStore.loggedIn) {
+  console.log(userStore.user[0])
+  
+  if (parseInt(userStore.user[0].attending_keynote)) {
+    Events.push(baseEvents[1])
+  }
+
+  if (parseInt(userStore.user[0].session1_id) > 0) {
+    Events.push(baseEvents[2])
+  }
+
+  if (parseInt(userStore.user[0].session2_id) > 0) {
+    Events.push(baseEvents[3])
+  }
+
+  if (parseInt(userStore.user[0].alt_id)) {
+    Events.push(baseEvents[4])
+  }
+}
 </script>
 
 <style lang="scss" scoped>

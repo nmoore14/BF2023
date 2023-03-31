@@ -7,6 +7,7 @@
       <p class="body-info">{{ startTime }} - {{ endTime }}</p>
       <h2 class="title-info">{{ location }}</h2>
       <h3 class="sub-title-info">{{ subLocation }}</h3>
+      <a :href="link">{{ link }}</a>
     </div>
   </div>
 </template>
@@ -18,7 +19,13 @@ const props = defineProps({
   title: String,
   location: String,
   subLocation: String,
+  link: String,
 });
+
+const current = new Date()
+const openTime = new Date('2023-04-05 09:30:00')
+console.log(current.toISOString())
+console.log(openTime.toISOString());
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,7 @@
 export const useUserStore = definePiniaStore('user-store', {
   state: () => {
     return {
+      loggedIn: false,
       user: {},
     }
   },
@@ -8,6 +9,7 @@ export const useUserStore = definePiniaStore('user-store', {
   actions: {
     setUser(user) {
       this.user = user
+      this.loggedIn = true
     }
   },
 })
