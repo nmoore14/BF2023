@@ -49,6 +49,23 @@ class Database extends Config {
     return $req->fetchAll();
   }
 
+  public function updateUserAttendance($data) {
+    $keys = [];
+    foreach($data as $key => $value) {
+      array_push($keys, $key . "=:" . $key);
+    }
+    try {
+      $sql = "UPDATE user_events SET ";
+      $sql = $sql . implode(',', $keys) . " WHERE student_id=:student_id";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->execute($data);
+      return true;
+    } catch (PDOException $e) {
+      print_r($e);
+      return false;
+    }
+  }
+
   public function fetch($table) {
     $sql = '';
 

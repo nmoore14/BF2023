@@ -100,6 +100,27 @@ class UserController extends BaseController
     }
   }
 
+  public function attendanceUser($data) {
+    $updateData = [
+      "student_id" => $data["studentId"],
+      $data["session"] => 1
+    ];
+
+    $attendaceUpdated = $this->users->updateUserAttendance($updateData);
+
+    if($attendaceUpdated) {
+      $this->sendOutput(
+        json_encode(array("checkedIn" => true)),
+          array('Content-Type: application/json', 'HTTP/1.1 200 OK')
+        );
+    } else {
+      $this->sendOutput(
+        json_encode(array("checkedIn" => false)),
+        array('Content-Type: application/json', 'error')
+      );
+    }
+  }
+
   public function getUser()
   {
     $data = $this->users->fetch('users');
