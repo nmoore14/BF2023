@@ -3,6 +3,6 @@ import { defuFn } from '/Users/nickmoore_rush/Desktop/projects/school/bf2023/fro
 
 const inlineConfig = {}
 
+import cfg0 from "/Users/nickmoore_rush/Desktop/projects/school/bf2023/frontend/app.config.ts"
 
-
-export default defuFn(inlineConfig)
+export default defuFn(cfg0, inlineConfig)

@@ -106,10 +106,6 @@ const confirmPassword = computed(() => {
   return password.value && passwordConfirm.value === password.value
 })
 
-const test = () => {
-  console.log('fired')
-}
-
 const findValidUser = async () => {
   checkingValid.value = !checkingValid.value
   await fetch('http://localhost/api/index.php/user/findValid/', {
@@ -130,7 +126,6 @@ const findValidUser = async () => {
 const userValidate = async () => {
   checkingValid.value = !checkingValid.value
   const studentData = { studentId: studentId.value, password: password.value }
-  console.log(studentData)
   await fetch('http://localhost/api/index.php/user/activate/', {
     method: 'POST',
     body: JSON.stringify(studentData),

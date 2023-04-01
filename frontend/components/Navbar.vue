@@ -25,9 +25,13 @@
           <NuxtLink class="link-item" to="/faq" active-class="nav-active">FAQ</NuxtLink>
         </li>
         <li>
-          <NuxtLink class="link-item-cta" to="/loginRegister"
-            >Login/Register</NuxtLink
-          >
+          <NuxtLink class="link-item-cta" to="/loginRegister" v-if="!userStore.loggedIn">
+            Login/Register
+          </NuxtLink>
+          <div class="flex row wrap justify-center items-center" v-if="userStore.loggedIn">
+            <h2 class="username-display">{{ user[0].last_name }}, {{ user[0].first_name }}</h2>
+            <i class="pi pi-sign-out logout-icon" @click="logOut"></i>
+          </div>
         </li>
       </ul>
     </nav>
@@ -78,28 +82,30 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
 import { ref } from "vue";
+import { storeToRefs } from 'pinia';
+import { useUserStore } from '~/stores/user'
 
-export default {
-  setup() {
-    let showMenu = ref(false);
+const userStore = useUserStore()
+const { clearUser } = userStore
+const { user, loggedIn } = storeToRefs(userStore);
 
-    const toggleNav = () => {
-      showMenu.value = !showMenu.value;
-    };
+const showMenu = ref(false);
 
-    const hideMenu = () => {
-      showMenu.value = false;
-    };
-
-    return {
-      showMenu,
-      toggleNav,
-      hideMenu,
-    };
-  },
+const toggleNav = () => {
+  showMenu.value = !showMenu.value;
 };
+
+const hideMenu = () => {
+  showMenu.value = false;
+};
+
+const logOut = () => {
+  clearUser()
+}
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -144,6 +150,15 @@ li {
   color: $gray-200;
   padding: .25rem .5rem;
   border-radius: .25rem;
+}
+
+.logout-icon {
+  color: $uc-red;
+  font-size: 1.25rem;
+}
+
+.logout-icon:hover {
+  cursor: pointer;
 }
 
 .mobile-nav-selected {

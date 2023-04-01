@@ -7,15 +7,34 @@
         class="flex row wrap justify-center items-center w-full my-1 p-1 event-cards"
       >
         <h1 class="w-full title event-section-title">Events</h1>
-        <EventCard
-          v-for="event in Events"
-          :startTime="event.startTime"
-          :endTime="event.endTime"
-          :title="event.title"
-          :location="event.location"
-          :subLocation="event.subLocation"
-          :link="event.link"
-        />
+        <template v-if="!userStore.loggedIn">
+          <EventCard
+            v-for="event in baseEvents"
+            :startTime="event.startTime"
+            :endTime="event.endTime"
+            :title="event.title"
+            :location="event.location"
+            :subLocation="event.subLocation"
+            :link-open="event.linkOpen"
+            :link-close="event.linkClose"
+            :session-key="event.sessionKey"
+            :attended="event.attended"
+          />
+        </template>
+        <template v-if="userStore.loggedIn">
+          <EventCard
+            v-for="event in UserEvents"
+            :startTime="event.startTime"
+            :endTime="event.endTime"
+            :title="event.title"
+            :location="event.location"
+            :subLocation="event.subLocation"
+            :link-open="event.linkOpen"
+            :link-close="event.linkClose"
+            :session-key="event.sessionKey"
+            :attended="event.attended"
+          />
+        </template>
       </div>
       <Sponsors />
     </main>
@@ -28,7 +47,7 @@ import { storeToRefs } from 'pinia';
 import { useUserStore } from '~/stores/user'
 
 const userStore = useUserStore()
-const { user, loggedIn } = storeToRefs(userStore);
+const { user, loggedIn, keynoteAttended, session1Attended, session2Attended, altAttended } = storeToRefs(userStore);
 
 const baseEvents = [
   {
@@ -37,7 +56,10 @@ const baseEvents = [
     title: "Registration",
     location: "Grace Crum Rollins Lobby",
     subLocation: "",
-    link: "https://www.google.com",
+    linkOpen: "",
+    linkClose: "",
+    sessionKey: "",
+    attended: false,
   },
   {
     startTime: "9:30",
@@ -45,7 +67,10 @@ const baseEvents = [
     title: "Keynote/Opening Session",
     location: "Kohn Theatre",
     subLocation: "Grace Crum Rollins",
-    link: "https://www.google.com",
+    linkOpen: "2023-04-01 00:00:00",
+    linkClose: "2023-04-01 23:59:00",
+    sessionKey: "keynote_attendance",
+    attended: loggedIn.value ? keynoteAttended.value : false,
   },
   {
     startTime: "10:30",
@@ -53,7 +78,10 @@ const baseEvents = [
     title: "Session 1",
     location: "Hutton School of Business",
     subLocation: "",
-    link: "https://www.google.com",
+    linkOpen: "2023-04-05 09:30:00",
+    linkClose: "2023-04-05 09:30:00",
+    sessionKey: "session1_attendance",
+    attended: loggedIn.value ? session1Attended.value : false,
   },
   {
     startTime: "11:30",
@@ -61,7 +89,10 @@ const baseEvents = [
     title: "Session 2",
     location: "Hutton School of Business",
     subLocation: "",
-    link: "https://www.google.com",
+    linkOpen: "2023-04-05 09:30:00",
+    linkClose: "2023-04-05 09:30:00",
+    sessionKey: "session2_attendance",
+    attended: loggedIn.value ? session2Attended.value : false,
   },
   {
     startTime: "12:15",
@@ -69,31 +100,45 @@ const baseEvents = [
     title: "Additional Meet & Greet",
     location: "Hutton School of Business",
     subLocation: "",
-    link: "https://www.google.com",
+    linkOpen: "2023-04-05 09:30:00",
+    linkClose: "2023-04-05 09:30:00",
+    sessionKey: "alt_attendance",
+    attended: loggedIn.value ? altAttended.value : false,
   },
 ];
 
-const Events = userStore.loggedIn ? [] : baseEvents;
+const UserEvents = ref([])
 
-if (userStore.loggedIn) {
-  console.log(userStore.user[0])
-  
+
+const setUserEvents = () => {
   if (parseInt(userStore.user[0].attending_keynote)) {
-    Events.push(baseEvents[1])
+    UserEvents.value.push(baseEvents[1])
   }
 
   if (parseInt(userStore.user[0].session1_id) > 0) {
-    Events.push(baseEvents[2])
+    UserEvents.value.push(baseEvents[2])
   }
 
   if (parseInt(userStore.user[0].session2_id) > 0) {
-    Events.push(baseEvents[3])
+    UserEvents.value.push(baseEvents[3])
   }
 
   if (parseInt(userStore.user[0].alt_id)) {
-    Events.push(baseEvents[4])
+    UserEvents.value.push(baseEvents[4])
   }
 }
+
+if(loggedIn.value) {
+    setUserEvents()
+}
+
+watch(loggedIn, () => {
+  if (!loggedIn.value) {
+    UserEvents.value = []
+  } else {
+    setUserEvents()
+  }
+})
 </script>
 
 <style lang="scss" scoped>

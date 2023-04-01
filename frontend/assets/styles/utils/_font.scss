@@ -84,6 +84,13 @@ $font: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
 
+.username-display {
+  font-family: $font;
+  font-size: 1.25rem;
+  color: $uc-blue;
+  margin-right: .5rem;
+}
+
 @media only screen and (max-width: 714px) {
   .faq-title {
     font-size: 1.5rem;
